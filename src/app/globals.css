@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg: #fffbf6;
+    --color-primary: #49674a;
+    --color-accent: #d7f5d8;
+    --color-text: #383434;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #fffbf6;
+    color: #383434;
+    font-family: var(--font-plus-jakarta), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  body {
+    background-color: #fffbf6;
+    color: #383434;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+  }
+
+  /* Tactile cotton paper grain texture overlay */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.032;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+  }
+
+  ::selection {
+    background-color: #d7f5d8;
+    color: #49674a;
+  }
+}
+
+/* Floating Island Glassmorphism */
+.island-nav {
+  background: rgba(255, 251, 246, 0.82);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(73, 103, 74, 0.14);
+  box-shadow: 0 16px 36px -12px rgba(73, 103, 74, 0.12), 0 4px 12px -2px rgba(56, 52, 52, 0.04);
+}
+
+/* Double-Bezel (Doppelrand) Architecture */
+.double-bezel {
+  padding: 5px;
+  border-radius: 2rem;
+  background: linear-gradient(135deg, rgba(215, 245, 216, 0.6) 0%, rgba(255, 255, 255, 0.9) 100%);
+  border: 1px solid rgba(73, 103, 74, 0.12);
+  box-shadow: 0 14px 34px -8px rgba(73, 103, 74, 0.08), 0 4px 10px -2px rgba(56, 52, 52, 0.03);
+}
+
+.double-bezel-inner {
+  border-radius: calc(2rem - 5px);
+  background: #ffffff;
+  box-shadow: inset 0 1px 1.5px rgba(255, 255, 255, 0.9), inset 0 -1px 1px rgba(73, 103, 74, 0.05);
+}
+
+/* Spring motion */
+.ease-spring {
+  transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fffbf6;
+}
+::-webkit-scrollbar-thumb {
+  background: #c2ebc3;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #49674a;
+}
